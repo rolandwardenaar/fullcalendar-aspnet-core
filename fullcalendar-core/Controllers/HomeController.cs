@@ -8,16 +8,21 @@ using fullcalendarcore.Models;
 using Microsoft.Extensions.Options;
 using fullcalendarcore.DataAccessLayer;
 using fullcalendarcore.Library;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace fullcalendarcore.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private DA _DA { get; set; }
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public HomeController(IOptions<AppSettings> settings)
+        public HomeController(IOptions<AppSettings> settings, UserManager<ApplicationUser> userManager)
         {
             _DA = new DA(settings.Value.ConnectionStr);
+            _userManager = userManager;
         }
 
         public IActionResult Index() 
@@ -34,18 +39,25 @@ namespace fullcalendarcore.Controllers
             string startISO = startDate.ToString("yyyy-MM-dd HH:mm:ss");
             string endISO = endDate.ToString("yyyy-MM-dd HH:mm:ss");
 
+            // Get ALL events (all users can see each other's events)
             List<Event> events = _DA.GetCalendarEvents(startISO, endISO);
+
+            // Get current user ID to mark which events belong to them
+            var currentUserId = _userManager.GetUserId(User);
 
             // Map to FullCalendar format with 'id' instead of 'EventId'
             var calendarEvents = events.Select(e => new {
-                id = e.EventId,  // FullCalendar expects lowercase 'id'
+                id = e.EventId,
                 title = e.Title,
                 start = e.Start,
                 end = e.End,
                 allDay = e.AllDay,
+                editable = e.UserId == currentUserId, // Only own events are editable
                 extendedProps = new {
                     description = e.Description,
-                    eventId = e.EventId  // Keep original EventId in extendedProps for backend calls
+                    eventId = e.EventId,
+                    userName = e.UserName ?? "Onbekend",
+                    isOwn = e.UserId == currentUserId
                 }
             });
 
@@ -53,7 +65,7 @@ namespace fullcalendarcore.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateEvent([FromBody] Event evt) 
+        public async Task<IActionResult> UpdateEvent([FromBody] Event evt) 
         {
             if (evt == null || evt.EventId <= 0)
             {
@@ -62,20 +74,46 @@ namespace fullcalendarcore.Controllers
 
             string message = String.Empty;
 
+            // Get current user info
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized("User not found.");
+            }
+
+            evt.UserId = user.Id;
+            evt.UserName = user.DisplayName ?? user.UserName;
+
             // Convert to ISO format for database storage
             evt.Start = ParseAndFormatDate(evt.Start);
             evt.End = string.IsNullOrEmpty(evt.End) ? null : ParseAndFormatDate(evt.End);
 
-            message = _DA.UpdateEvent(evt);
+            // Pass current user ID for ownership check
+            message = _DA.UpdateEvent(evt, user.Id);
 
-            return Json(new { message });
+            if (!string.IsNullOrEmpty(message))
+            {
+                return BadRequest(new { message });
+            }
+
+            return Json(new { message = "Event succesvol bijgewerkt." });
         }
 
         [HttpPost]
-        public IActionResult AddEvent([FromBody] Event evt) 
+        public async Task<IActionResult> AddEvent([FromBody] Event evt) 
         {
             string message = String.Empty;
             int eventId = 0;
+
+            // Get current user info
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized("User not found.");
+            }
+
+            evt.UserId = user.Id;
+            evt.UserName = user.DisplayName ?? user.UserName;
 
             // Convert to ISO format for database storage
             evt.Start = ParseAndFormatDate(evt.Start);
@@ -83,16 +121,39 @@ namespace fullcalendarcore.Controllers
 
             message = _DA.AddEvent(evt, out eventId);
 
-            return Json(new { message, eventId });
+            if (!string.IsNullOrEmpty(message))
+            {
+                return BadRequest(new { message });
+            }
+
+            return Json(new { 
+                message = "Event succesvol toegevoegd.",
+                eventId = eventId,
+                userId = evt.UserId,
+                userName = evt.UserName
+            });
         }
 
         [HttpPost]
-        public IActionResult DeleteEvent([FromBody] Event evt) {
+        public async Task<IActionResult> DeleteEvent([FromBody] Event evt) {
             string message = String.Empty;
 
-            message = _DA.DeleteEvent(evt.EventId);
+            // Get current user info
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                return Unauthorized("User not found.");
+            }
 
-            return Json(new { message });
+            // Pass current user ID for ownership check
+            message = _DA.DeleteEvent(evt.EventId, user.Id);
+
+            if (!string.IsNullOrEmpty(message))
+            {
+                return BadRequest(new { message });
+            }
+
+            return Json(new { message = "Event succesvol verwijderd." });
         }
 
         private string ParseAndFormatDate(string dateStr)

@@ -6,9 +6,166 @@
     <title>Kalender</title>
 
     <link rel="stylesheet" href="~/css/calendar.css" asp-append-version="true" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .layout-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: #343a40;
+            width: 250px;
+            padding: 1.5rem 1rem;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1000;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+
+        .sidebar-brand {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: block;
+            text-decoration: none;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar-brand:hover {
+            color: white;
+        }
+
+        .user-info {
+            background-color: rgba(255,255,255,0.1);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,.85);
+        }
+
+        .user-info strong {
+            display: block;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,.75);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            display: block;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .nav-link.active {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        .btn-logout {
+            background: none;
+            border: 1px solid rgba(255,255,255,.75);
+            color: rgba(255,255,255,.75);
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            width: 100%;
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        .btn-logout:hover {
+            background-color: rgba(255,255,255,.1);
+            color: white;
+            border-color: white;
+        }
+
+        .main-content {
+            margin-left: 250px;
+            flex: 1;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <body>
-    @RenderBody()
+    @inject Microsoft.AspNetCore.Identity.SignInManager<fullcalendarcore.Models.ApplicationUser> SignInManager
+    @inject Microsoft.AspNetCore.Identity.UserManager<fullcalendarcore.Models.ApplicationUser> UserManager
+
+    <div class="layout-container">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            var currentUser = await UserManager.GetUserAsync(User);
+            <aside class="sidebar">
+                <a class="sidebar-brand" href="/">📅 Kalender</a>
+
+                <div class="user-info">
+                    <strong>Ingelogd als:</strong>
+                    @(currentUser?.DisplayName ?? currentUser?.UserName)
+                </div>
+
+                <ul class="nav-menu">
+                    <li>
+                        <a class="nav-link" asp-controller="Home" asp-action="Index">
+                            🏠 Home
+                        </a>
+                    </li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>
+                            <a class="nav-link" asp-controller="Account" asp-action="ManageUsers">
+                                👥 Gebruikersbeheer
+                            </a>
+                        </li>
+                    }
+                    <li>
+                        <a class="nav-link" asp-controller="Account" asp-action="ChangePassword">
+                            🔒 Wachtwoord wijzigen
+                        </a>
+                    </li>
+                </ul>
+
+                <form asp-controller="Account" asp-action="Logout" method="post" style="margin: 0;">
+                    <button type="submit" class="btn-logout">🚪 Uitloggen</button>
+                </form>
+            </aside>
+        }
+
+        <main class="main-content">
+            @RenderBody()
+        </main>
+    </div>
 
     <script type="module" src="~/js/calendar.js" asp-append-version="true"></script>
 

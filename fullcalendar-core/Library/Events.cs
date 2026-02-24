@@ -13,5 +13,7 @@ namespace fullcalendarcore.Library
         public string Start { get; set; }
         public string End { get; set; }
         public bool AllDay { get; set; }
+        public string UserId { get; set; }
+        public string UserName { get; set; }
     }
 }

@@ -35,6 +35,12 @@
                             <textarea class="form-control" id="Description" rows="5"></textarea>
                         </div>
                     </div>
+                    <div class="mb-3 row" id="userNameRow">
+                        <label for="UserName" class="col-sm-3 col-form-label">Eigenaar</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="UserName" readonly>
+                        </div>
+                    </div>
                     <div class="mb-3 row">
                         <div class="col-sm-9 offset-sm-3">
                             <div class="form-check">
@@ -44,6 +50,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="isNewEvent" />
+                    <input type="hidden" id="isOwnEvent" />
                 </form>
             </div>
             <div class="modal-footer">

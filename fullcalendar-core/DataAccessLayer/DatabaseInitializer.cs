@@ -27,13 +27,47 @@ namespace fullcalendarcore.DataAccessLayer
                         description TEXT,
                         event_start TEXT NOT NULL,
                         event_end TEXT,
-                        all_day INTEGER NOT NULL DEFAULT 0
+                        all_day INTEGER NOT NULL DEFAULT 0,
+                        user_id TEXT,
+                        user_name TEXT
                     )";
 
                 createTableCommand.ExecuteNonQuery();
 
+                // Add user_id column if it doesn't exist (for existing databases)
+                AddColumnIfNotExists(connection, "Events", "user_id", "TEXT");
+
+                // Add user_name column if it doesn't exist (for existing databases)
+                AddColumnIfNotExists(connection, "Events", "user_name", "TEXT");
+
                 // Normalize existing date formats to ISO 8601
                 NormalizeDateFormats(connection);
+            }
+        }
+
+        private void AddColumnIfNotExists(SqliteConnection connection, string tableName, string columnName, string columnType)
+        {
+            var checkColumnCmd = connection.CreateCommand();
+            checkColumnCmd.CommandText = $"PRAGMA table_info({tableName})";
+
+            bool columnExists = false;
+            using (var reader = checkColumnCmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    if (reader.GetString(1).Equals(columnName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        columnExists = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!columnExists)
+            {
+                var addColumnCmd = connection.CreateCommand();
+                addColumnCmd.CommandText = $"ALTER TABLE {tableName} ADD COLUMN {columnName} {columnType}";
+                addColumnCmd.ExecuteNonQuery();
             }
         }
 

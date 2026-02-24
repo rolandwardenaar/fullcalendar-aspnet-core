@@ -94,23 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
             today: 'Vandaag',
             month: 'Maand',
             week: 'Week',
-            day: 'Dag'
+            dag: 'Dag'
         },
-        editable: true,
+        editable: true, // Global editable, but controlled per event
+        eventStartEditable: true,
+        eventDurationEditable: true,
         selectable: true,
         selectMirror: true,
         dayMaxEvents: true,
         events: '/Home/GetCalendarEvents',
+        // Control editability per event
+        eventAllow: function(dropInfo, draggedEvent) {
+            // Only allow dragging/dropping own events
+            return draggedEvent.extendedProps.isOwn === true;
+        },
         eventDidMount: function(info) {
             // Add Bootstrap 5 tooltip to event
             const eventEl = info.el;
             const description = info.event.extendedProps.description || 'Geen beschrijving';
+            const userName = info.event.extendedProps.userName || 'Onbekend';
+            const isOwn = info.event.extendedProps.isOwn || false;
+
+            // Add visual indicator for other users' events
+            if (!isOwn) {
+                eventEl.style.opacity = '0.7';
+                eventEl.style.cursor = 'pointer';
+                eventEl.classList.add('other-user-event');
+            }
 
             // Set tooltip attributes
             eventEl.setAttribute('data-bs-toggle', 'tooltip');
             eventEl.setAttribute('data-bs-placement', 'top');
             eventEl.setAttribute('data-bs-html', 'true');
-            eventEl.setAttribute('data-bs-title', `<strong>${info.event.title}</strong><br>${description}`);
+            eventEl.setAttribute('data-bs-title', `<strong>${info.event.title}</strong><br>${description}<br><em>Door: ${userName}</em>`);
 
             // Initialize Bootstrap tooltip
             new Tooltip(eventEl);
@@ -139,6 +155,49 @@ function updateEvent(event) {
     document.getElementById('Description').value = event.extendedProps.description || '';
     document.getElementById('isNewEvent').value = false;
 
+    // Show owner/creator name
+    const userName = event.extendedProps.userName || 'Onbekend';
+    const isOwnEvent = event.extendedProps.isOwn || false;
+    document.getElementById('UserName').value = userName;
+    document.getElementById('isOwnEvent').value = isOwnEvent;
+
+    // Disable form fields and buttons if not own event
+    const deleteBtn = document.getElementById('deleteEvent');
+    const saveBtn = document.getElementById('eventModalSave');
+    const titleInput = document.getElementById('EventTitle');
+    const descInput = document.getElementById('Description');
+    const startInput = document.getElementById('StartTime');
+    const endInput = document.getElementById('EndTime');
+    const allDayCheckbox = document.getElementById('AllDay');
+
+    if (!isOwnEvent) {
+        // Read-only mode for other users' events
+        titleInput.readOnly = true;
+        descInput.readOnly = true;
+        startInput.disabled = true;
+        endInput.disabled = true;
+        allDayCheckbox.disabled = true;
+        deleteBtn.style.display = 'none';
+        saveBtn.style.display = 'none';
+
+        titleInput.classList.add('bg-light');
+        descInput.classList.add('bg-light');
+        startInput.classList.add('bg-light');
+        endInput.classList.add('bg-light');
+    } else {
+        // Editable mode for own events
+        titleInput.readOnly = false;
+        descInput.readOnly = false;
+        startInput.disabled = false;
+        allDayCheckbox.disabled = false;
+        deleteBtn.style.display = 'inline-block';
+        saveBtn.style.display = 'inline-block';
+
+        titleInput.classList.remove('bg-light');
+        descInput.classList.remove('bg-light');
+        startInput.classList.remove('bg-light');
+    }
+
     const start = formatDate(event.start);
     const end = formatDate(event.end);
 
@@ -148,18 +207,15 @@ function updateEvent(event) {
     document.getElementById('StartTime').value = start;
     document.getElementById('EndTime').value = end;
 
-    const allDayCheckbox = document.getElementById('AllDay');
-    const endTimeInput = document.getElementById('EndTime');
-
     allDayCheckbox.checked = event.allDay;
 
-    // Disable end time if it's an all-day event
-    if (event.allDay) {
-        endTimeInput.disabled = true;
-        endTimeInput.classList.add('bg-light');
+    // Disable end time if it's an all-day event or not own event
+    if (event.allDay || !isOwnEvent) {
+        endInput.disabled = true;
+        endInput.classList.add('bg-light');
     } else {
-        endTimeInput.disabled = false;
-        endTimeInput.classList.remove('bg-light');
+        endInput.disabled = false;
+        endInput.classList.remove('bg-light');
     }
 
     eventModal.show();
@@ -171,6 +227,28 @@ function addEvent(start, end, allDay) {
     document.getElementById('eventModalLabel').textContent = 'Nieuw evenement';
     document.getElementById('eventModalSave').textContent = 'Aanmaken';
     document.getElementById('isNewEvent').value = true;
+    document.getElementById('isOwnEvent').value = true;
+    document.getElementById('UserName').value = ''; // Will be set by server
+
+    // Enable all form fields for new event
+    const deleteBtn = document.getElementById('deleteEvent');
+    const saveBtn = document.getElementById('eventModalSave');
+    const titleInput = document.getElementById('EventTitle');
+    const descInput = document.getElementById('Description');
+    const startInput = document.getElementById('StartTime');
+    const endInput = document.getElementById('EndTime');
+    const allDayCheckbox = document.getElementById('AllDay');
+
+    titleInput.readOnly = false;
+    descInput.readOnly = false;
+    startInput.disabled = false;
+    allDayCheckbox.disabled = false;
+    deleteBtn.style.display = 'none'; // No delete for new events
+    saveBtn.style.display = 'inline-block';
+
+    titleInput.classList.remove('bg-light');
+    descInput.classList.remove('bg-light');
+    startInput.classList.remove('bg-light');
 
     const startFormatted = formatDate(start);
     const endFormatted = formatDate(end);
@@ -182,9 +260,8 @@ function addEvent(start, end, allDay) {
     document.getElementById('EndTime').value = endFormatted;
 
     // Ensure EndTime is enabled for new events
-    const endTimeInput = document.getElementById('EndTime');
-    endTimeInput.disabled = false;
-    endTimeInput.classList.remove('bg-light');
+    endInput.disabled = false;
+    endInput.classList.remove('bg-light');
 
     eventModal.show();
 }
@@ -235,39 +312,41 @@ function sendAddEvent(event) {
         AllDay: event.isAllDay
     })
     .then(res => {
-        const { message, eventId } = res.data;
+        const { eventId, userId, userName } = res.data;
 
-        if (message === '') {
-            // Parse the dates using our custom parser for Dutch format
-            const startDate = parseDate(event.startTime);
-            const endDate = event.endTime ? parseDate(event.endTime) : null;
+        // Parse the dates using our custom parser for Dutch format
+        const startDate = parseDate(event.startTime);
+        const endDate = event.endTime ? parseDate(event.endTime) : null;
 
-            if (!startDate) {
-                alert('Ongeldige starttijd');
-                return;
-            }
-
-            const newEvent = {
-                id: eventId,
-                title: event.title,
-                start: startDate.toISOString(),  // ✅ ISO format for FullCalendar
-                end: endDate ? endDate.toISOString() : null,
-                allDay: event.isAllDay,
-                extendedProps: {
-                    description: event.description,
-                    eventId: eventId
-                }
-            };
-
-            calendar.addEvent(newEvent);
-            calendar.unselect();
-
-            eventModal.hide();
-        } else {
-            alert(`Er ging iets mis: ${message}`);
+        if (!startDate) {
+            alert('Ongeldige starttijd');
+            return;
         }
+
+        const newEvent = {
+            id: eventId,
+            title: event.title,
+            start: startDate.toISOString(),
+            end: endDate ? endDate.toISOString() : null,
+            allDay: event.isAllDay,
+            extendedProps: {
+                description: event.description,
+                eventId: eventId,
+                userName: userName || 'Onbekend',
+                isOwn: true
+            }
+        };
+
+        calendar.addEvent(newEvent);
+        calendar.unselect();
+
+        eventModal.hide();
     })
-    .catch(err => alert(`Er ging iets mis: ${err}`));
+    .catch(err => {
+        console.error('Add error:', err);
+        const errorMessage = err.response?.data?.message || err.message || 'Er ging iets mis bij het toevoegen';
+        alert(errorMessage);
+    });
 }
 
 function sendUpdateEvent(event) {
@@ -280,30 +359,29 @@ function sendUpdateEvent(event) {
         AllDay: event.isAllDay
     })
     .then(res => {
-        const { message } = res.data;
+        // Parse dates using our custom parser for Dutch format
+        const startDate = parseDate(event.startTime);
+        const endDate = event.endTime ? parseDate(event.endTime) : null;
 
-        if (message === '') {
-            // Parse dates using our custom parser for Dutch format
-            const startDate = parseDate(event.startTime);
-            const endDate = event.endTime ? parseDate(event.endTime) : null;
-
-            if (!startDate) {
-                alert('Ongeldige starttijd');
-                return;
-            }
-
-            currentEvent.setProp('title', event.title);
-            currentEvent.setStart(startDate.toISOString());  // ✅ ISO format
-            currentEvent.setEnd(endDate ? endDate.toISOString() : null);
-            currentEvent.setAllDay(event.isAllDay);
-            currentEvent.setExtendedProp('description', event.description);
-
-            eventModal.hide();
-        } else {
-            alert(`Er ging iets mis: ${message}`);
+        if (!startDate) {
+            alert('Ongeldige starttijd');
+            return;
         }
+
+        currentEvent.setProp('title', event.title);
+        currentEvent.setStart(startDate.toISOString());
+        currentEvent.setEnd(endDate ? endDate.toISOString() : null);
+        currentEvent.setAllDay(event.isAllDay);
+        currentEvent.setExtendedProp('description', event.description);
+        // Keep userName and isOwn unchanged
+
+        eventModal.hide();
     })
-    .catch(err => alert(`Er ging iets mis: ${err}`));
+    .catch(err => {
+        console.error('Update error:', err);
+        const errorMessage = err.response?.data?.message || err.message || 'Er ging iets mis bij het bijwerken';
+        alert(errorMessage);
+    });
 }
 
 document.getElementById('deleteEvent').addEventListener('click', () => {
@@ -312,16 +390,14 @@ document.getElementById('deleteEvent').addEventListener('click', () => {
             EventId: currentEvent.id
         })
         .then(res => {
-            const { message } = res.data;
-
-            if (message === '') {
-                currentEvent.remove();
-                eventModal.hide();
-            } else {
-                alert(`Er ging iets mis: ${message}`);
-            }
+            currentEvent.remove();
+            eventModal.hide();
         })
-        .catch(err => alert(`Er ging iets mis: ${err}`));
+        .catch(err => {
+            console.error('Delete error:', err);
+            const errorMessage = err.response?.data?.message || err.message || 'Er ging iets mis bij het verwijderen';
+            alert(errorMessage);
+        });
     }
 });
 

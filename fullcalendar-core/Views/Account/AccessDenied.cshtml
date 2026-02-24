@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Toegang geweigerd";
+}
+
+<div class="container-fluid" style="padding: 2rem;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body p-4 text-center">
+                    <h2 class="text-danger">@ViewData["Title"]</h2>
+                    <hr />
+                    <p>Je hebt geen toegang tot deze pagina.</p>
+                    <p>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Terug naar home</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

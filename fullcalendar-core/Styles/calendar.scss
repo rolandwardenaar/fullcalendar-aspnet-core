@@ -1,13 +1,13 @@
 ﻿// Calendar wrapper
 #calendar-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f8f9fa;
 }
 
 #calendar {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 0; // Will be next to sidebar
     right: 0;
     bottom: 0;
     padding: 1rem;
@@ -118,12 +118,23 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
 
-        // Default event colors
+        // Default event colors (own events)
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
         color: white !important;
 
         .fc-event-title {
             font-weight: 500;
+        }
+
+        // Other users' events styling
+        &.other-user-event {
+            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%) !important;
+            opacity: 0.75 !important;
+            border-left: 3px solid #34495e !important;
+
+            &:hover {
+                opacity: 0.9 !important;
+            }
         }
     }
 

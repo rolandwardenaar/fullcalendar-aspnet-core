@@ -10,6 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using fullcalendarcore.DataAccessLayer;
+using Microsoft.EntityFrameworkCore;
+using fullcalendarcore.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace fullcalendarcore
 {
@@ -27,6 +30,28 @@ namespace fullcalendarcore
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            // Add DbContext for Identity
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlite(Configuration.GetSection("AppSettings")["ConnectionStr"]));
+
+            // Add Identity
+            services.AddIdentity<ApplicationUser, IdentityRole>(options => {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+            })
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
+
+            // Configure cookie settings
+            services.ConfigureApplicationCookie(options => {
+                options.LoginPath = "/Account/Login";
+                options.LogoutPath = "/Account/Logout";
+                options.AccessDeniedPath = "/Account/AccessDenied";
             });
 
             services.AddControllersWithViews();
@@ -52,6 +77,19 @@ namespace fullcalendarcore
             var dbInitializer = new DatabaseInitializer(connectionString);
             dbInitializer.Initialize();
 
+            // Run Identity database migrations and seed initial data
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var context = services.GetRequiredService<ApplicationDbContext>();
+
+                // Apply pending migrations (creates tables if needed)
+                context.Database.Migrate();
+
+                // Seed roles and admin user
+                DbSeeder.SeedAsync(services).Wait();
+            }
+
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             } else {
@@ -66,9 +104,10 @@ namespace fullcalendarcore
 
             var corsPolicy = "_myAllowSpecificOrigins";
 
-            
-
             app.UseCors(corsPolicy);
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(
