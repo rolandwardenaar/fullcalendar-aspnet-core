@@ -1,0 +1,3219 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "net10.0",
+    "targetDisplayName": ".NETCoreApp,Version=v10.0"
+  },
+  "analysisStartTime": "2026-02-24T05:13:29.5434623Z",
+  "analysisEndTime": "2026-02-24T05:13:30.9591017Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 1,
+      "issues": 5,
+      "incidents": 128,
+      "effort": 128
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 4,
+        "Optional": 0,
+        "Potential": 124,
+        "Information": 0
+      },
+      "category": {
+        "NuGet": 2,
+        "Project": 1,
+        "Api": 125
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "fullcalendar-core\\fullcalendar-core.csproj",
+      "startingProject": true,
+      "issues": 5,
+      "storyPoints": 128,
+      "properties": {
+        "appName": "fullcalendar-core",
+        "projectKind": "AspNetCore",
+        "frameworks": [
+          "netcoreapp2.1"
+        ],
+        "languages": [
+          "C#"
+        ],
+        "tools": [
+          "MSBuild"
+        ],
+        "isSdkStyle": true,
+        "numberOfFiles": 24,
+        "numberOfCodeFiles": 15,
+        "linesTotal": 11310,
+        "linesOfCode": 560,
+        "totalApiScanned": 613,
+        "minLinesOfCodeToChange": 125,
+        "maxLinesOfCodeToChange": 125
+      },
+      "ruleInstances": [
+        {
+          "incidentId": "9bcd65e1-8de9-42d7-bc57-8f4b7c3b0555",
+          "ruleId": "NuGet.0003",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.App, \n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.AspNetCore.App, \n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\fullcalendar-core.csproj",
+            "snippet": "Microsoft.AspNetCore.App, \n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.AspNetCore.App, \n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.AspNetCore.App ",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.App",
+              "PackageVersion": "",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "eba16e15-6184-49bb-919d-da054482b7c1",
+          "ruleId": "NuGet.0003",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Microsoft.AspNetCore.Razor.Design, 2.1.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+              "protected": "Microsoft.AspNetCore.Razor.Design, 2.1.2\n\nRecommendation:\n\nPackage functionality included with new framework reference"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\fullcalendar-core.csproj",
+            "snippet": "Microsoft.AspNetCore.Razor.Design, 2.1.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "protectedSnippet": "Microsoft.AspNetCore.Razor.Design, 2.1.2\n\nRecommendation:\n\nPackage functionality included with new framework reference",
+            "label": "Microsoft.AspNetCore.Razor.Design 2.1.2",
+            "properties": {
+              "PackageId": "Microsoft.AspNetCore.Razor.Design",
+              "PackageVersion": "2.1.2",
+              "PackageNewVersion": null,
+              "PackageReplacements": null
+            }
+          }
+        },
+        {
+          "incidentId": "8ca0ab31-4646-4373-b52a-16b7bd444185",
+          "ruleId": "Project.0002",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current target framework: netcoreapp2.1\nRecommended target framework: net10.0",
+              "protected": "Current target framework: netcoreapp2.1\nRecommended target framework: net10.0"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\fullcalendar-core.csproj",
+            "snippet": "Current target framework: netcoreapp2.1\nRecommended target framework: net10.0",
+            "protectedSnippet": "Current target framework: netcoreapp2.1\nRecommended target framework: net10.0",
+            "properties": {
+              "CurrentTargetFramework": "netcoreapp2.1",
+              "RecommendedTargetFramework": "net10.0"
+            }
+          }
+        },
+        {
+          "incidentId": "258b1c8f-e3e7-469c-b773-15d9785c138f",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trans.Rollback();",
+              "protected": "M:System.Data.SqlClient.SqlTransaction.Rollback"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "trans.Rollback();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlTransaction.Rollback",
+            "label": "M:System.Data.SqlClient.SqlTransaction.Rollback",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 166,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "6dc7b7c4-87cf-46a9-a7be-6ad81407a775",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trans.Commit();",
+              "protected": "M:System.Data.SqlClient.SqlTransaction.Commit"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "trans.Commit();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlTransaction.Commit",
+            "label": "M:System.Data.SqlClient.SqlTransaction.Commit",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 164,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "d9b4922b-ee4a-4782-9cd6-a8b1a5d9027f",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.ExecuteNonQuery();",
+              "protected": "M:System.Data.SqlClient.SqlCommand.ExecuteNonQuery"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.ExecuteNonQuery();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.ExecuteNonQuery",
+            "label": "M:System.Data.SqlClient.SqlCommand.ExecuteNonQuery",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 162,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e5d5fd9a-3286-44d7-ad39-6cee127ee621",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 161,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "4a97b9d1-b552-407f-9452-93e9f340bea2",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 161,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "de802bc3-356b-4cd9-8442-fb6f878b174c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 161,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "2d9e68ce-e712-41e8-8114-5d614bb5b707",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 161,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e853caf6-879c-49f4-8890-0e21f76fabf1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = eventId;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 161,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "5c811c5c-9ae5-421a-b14b-e770530b47c6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022delete from \r\n\t                                                [Events]\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "P:System.Data.SqlClient.SqlCommand.CommandType"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022delete from \r\n\t                                                [Events]\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "label": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 155,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ccdf91ad-b260-4ae1-bc9d-f2a5396ea793",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022delete from \r\n\t                                                [Events]\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "T:System.Data.SqlClient.SqlCommand"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022delete from \r\n\t                                                [Events]\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlCommand",
+            "label": "T:System.Data.SqlClient.SqlCommand",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 155,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "7af5c2ae-5af4-47e1-b53e-6f871bcb5b79",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022delete from \r\n\t                                                [Events]\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022delete from \r\n\t                                                [Events]\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)",
+            "label": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 155,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "02638100-ff05-4f8a-a49a-a9ad40544b0e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlTransaction trans = conn.BeginTransaction();",
+              "protected": "T:System.Data.SqlClient.SqlTransaction"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlTransaction trans = conn.BeginTransaction();",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlTransaction",
+            "label": "T:System.Data.SqlClient.SqlTransaction",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 152,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5ea3ecbb-3022-488d-922c-054b7fcf2e75",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlTransaction trans = conn.BeginTransaction();",
+              "protected": "M:System.Data.SqlClient.SqlConnection.BeginTransaction"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlTransaction trans = conn.BeginTransaction();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlConnection.BeginTransaction",
+            "label": "M:System.Data.SqlClient.SqlConnection.BeginTransaction",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 152,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "e2e4a69a-6a74-41dc-b91d-df8ac1f17a2e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlConnection conn = GetConnection();",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlConnection conn = GetConnection();",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 151,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d6cb0080-09fb-454f-9db6-1e37a71425b6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trans.Rollback();",
+              "protected": "M:System.Data.SqlClient.SqlTransaction.Rollback"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "trans.Rollback();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlTransaction.Rollback",
+            "label": "M:System.Data.SqlClient.SqlTransaction.Rollback",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 140,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "8d353988-a32e-4346-a013-5f4f14f21cd5",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trans.Commit();",
+              "protected": "M:System.Data.SqlClient.SqlTransaction.Commit"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "trans.Commit();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlTransaction.Commit",
+            "label": "M:System.Data.SqlClient.SqlTransaction.Commit",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 138,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ad4df3b9-406a-49f7-bb41-49861fc3921d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "eventId =  Convert.ToInt32(cmd.ExecuteScalar());",
+              "protected": "M:System.Data.SqlClient.SqlCommand.ExecuteScalar"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "eventId =  Convert.ToInt32(cmd.ExecuteScalar());",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.ExecuteScalar",
+            "label": "M:System.Data.SqlClient.SqlCommand.ExecuteScalar",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 136,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "871fcab8-d54d-4006-963c-62e760a35045",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 134,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e06bf09d-ab91-44dd-a1c6-202bda891c3d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 134,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "6b5d8fe4-01c9-419b-92b6-305071533c17",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 134,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "16fbd4b7-28b7-46e0-94d5-4d02cf7a27c8",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 134,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "9deb1d41-7fe5-4eb6-94ed-c565ec2cb615",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 134,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "b5880277-b290-4959-9432-013ca338b1f8",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 133,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "2670bb62-2645-4d1f-8dc5-53805ebfd56e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 133,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "0d4a0ede-8c12-4680-baad-1184d128b4c6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 133,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ea589afd-7c8b-4c06-9d3d-7af340bf02d1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 133,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "6795d9ef-b2ab-459d-b157-062332056650",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 133,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "4ba6b858-9985-4037-a206-5fc59b3cec29",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 132,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "1b9fd773-a7db-4449-af4d-d62ff0d4803d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 132,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e737493c-fc86-4c2a-8233-620e106ddf70",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 132,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "fb25177a-682a-476c-8c9d-f13e108d8d9b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 132,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "6657c332-27a5-4837-a041-d5718f37ef60",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 132,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "41e79df5-88a1-467b-942e-58a36982e523",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 131,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "220e8887-f8b1-4852-acd3-d5c4e43cacd2",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 131,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e3c332f1-b7d6-4922-8228-9bb2562d6cbb",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 131,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "b7a4147f-1c1b-4d99-b6bf-da21fadb77cd",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 131,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "2652c467-2f53-4555-bd38-ed76aece2c80",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 131,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e10c5772-b232-4119-b4d9-602b4c08ab9b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 130,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "58cbca5d-30b0-4927-bb47-b90c17a5e2d7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 130,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e99a1e11-1623-4015-b530-6c0a784c9cea",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 130,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "270570af-e2ec-4917-9392-ab0c4d320992",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 130,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "09f4ef80-1923-49b2-b3c8-844faae862e9",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 130,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "f8853c34-fc21-4aba-b86a-db6a84c41f07",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022insert into [Events]\r\n                                                (\r\n\t                                                title\r\n\t                                                ,[description]\r\n\t                                                ,event_start\r\n\t                                                ,event_end\r\n\t                                                ,all_day\r\n                                                )\r\n                                                values\r\n                                                (\r\n\t                                                @title\r\n\t                                                ,@description\r\n\t                                                ,@start\r\n\t                                                ,@end\r\n\t                                                ,@allDay\r\n                                                );\r\n                                                select scope_identity()\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "P:System.Data.SqlClient.SqlCommand.CommandType"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022insert into [Events]\r\n                                                (\r\n\t                                                title\r\n\t                                                ,[description]\r\n\t                                                ,event_start\r\n\t                                                ,event_end\r\n\t                                                ,all_day\r\n                                                )\r\n                                                values\r\n                                                (\r\n\t                                                @title\r\n\t                                                ,@description\r\n\t                                                ,@start\r\n\t                                                ,@end\r\n\t                                                ,@allDay\r\n                                                );\r\n                                                select scope_identity()\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "label": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 111,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "6454ad87-a289-4d3e-af5d-846d88e842d6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022insert into [Events]\r\n                                                (\r\n\t                                                title\r\n\t                                                ,[description]\r\n\t                                                ,event_start\r\n\t                                                ,event_end\r\n\t                                                ,all_day\r\n                                                )\r\n                                                values\r\n                                                (\r\n\t                                                @title\r\n\t                                                ,@description\r\n\t                                                ,@start\r\n\t                                                ,@end\r\n\t                                                ,@allDay\r\n                                                );\r\n                                                select scope_identity()\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "T:System.Data.SqlClient.SqlCommand"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022insert into [Events]\r\n                                                (\r\n\t                                                title\r\n\t                                                ,[description]\r\n\t                                                ,event_start\r\n\t                                                ,event_end\r\n\t                                                ,all_day\r\n                                                )\r\n                                                values\r\n                                                (\r\n\t                                                @title\r\n\t                                                ,@description\r\n\t                                                ,@start\r\n\t                                                ,@end\r\n\t                                                ,@allDay\r\n                                                );\r\n                                                select scope_identity()\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlCommand",
+            "label": "T:System.Data.SqlClient.SqlCommand",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 111,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "0f42063a-731e-4c44-a2aa-6d6f910ec65d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022insert into [Events]\r\n                                                (\r\n\t                                                title\r\n\t                                                ,[description]\r\n\t                                                ,event_start\r\n\t                                                ,event_end\r\n\t                                                ,all_day\r\n                                                )\r\n                                                values\r\n                                                (\r\n\t                                                @title\r\n\t                                                ,@description\r\n\t                                                ,@start\r\n\t                                                ,@end\r\n\t                                                ,@allDay\r\n                                                );\r\n                                                select scope_identity()\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022insert into [Events]\r\n                                                (\r\n\t                                                title\r\n\t                                                ,[description]\r\n\t                                                ,event_start\r\n\t                                                ,event_end\r\n\t                                                ,all_day\r\n                                                )\r\n                                                values\r\n                                                (\r\n\t                                                @title\r\n\t                                                ,@description\r\n\t                                                ,@start\r\n\t                                                ,@end\r\n\t                                                ,@allDay\r\n                                                );\r\n                                                select scope_identity()\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)",
+            "label": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 111,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e7ff8c85-54f7-41a9-ab21-a8e888bf3a8c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlTransaction trans = conn.BeginTransaction();",
+              "protected": "T:System.Data.SqlClient.SqlTransaction"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlTransaction trans = conn.BeginTransaction();",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlTransaction",
+            "label": "T:System.Data.SqlClient.SqlTransaction",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 107,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d37dfa74-2892-4cd4-a95e-6393b1cf722b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlTransaction trans = conn.BeginTransaction();",
+              "protected": "M:System.Data.SqlClient.SqlConnection.BeginTransaction"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlTransaction trans = conn.BeginTransaction();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlConnection.BeginTransaction",
+            "label": "M:System.Data.SqlClient.SqlConnection.BeginTransaction",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 107,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "46128be0-0a96-44cd-bc9b-674a3b6a465c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlConnection conn = GetConnection();",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlConnection conn = GetConnection();",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 106,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f465a01c-153d-47eb-bb0b-adda20b7cb3c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trans.Rollback();",
+              "protected": "M:System.Data.SqlClient.SqlTransaction.Rollback"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "trans.Rollback();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlTransaction.Rollback",
+            "label": "M:System.Data.SqlClient.SqlTransaction.Rollback",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 95,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "bf59781a-a8b9-4e3d-9925-0a324be33d89",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "trans.Commit();",
+              "protected": "M:System.Data.SqlClient.SqlTransaction.Commit"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "trans.Commit();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlTransaction.Commit",
+            "label": "M:System.Data.SqlClient.SqlTransaction.Commit",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 93,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "16cbc88b-2b99-4f10-b96a-baa75972e146",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.ExecuteNonQuery();",
+              "protected": "M:System.Data.SqlClient.SqlCommand.ExecuteNonQuery"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.ExecuteNonQuery();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.ExecuteNonQuery",
+            "label": "M:System.Data.SqlClient.SqlCommand.ExecuteNonQuery",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 91,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "14101006-b607-4dc4-865a-707de938c891",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 90,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "b1c359ab-c69a-4237-88fb-2360368f30a6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 90,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "1c0eefcf-0e88-4a8a-838b-027e2ccc822a",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 90,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "c1f39108-1690-427a-aba1-044f495f2d39",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 90,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a6ec2a49-af15-47e6-ae41-6812a3351ca2",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@allDay\u0022, SqlDbType.Bit).Value = evt.AllDay;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 90,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "eb9faf51-9143-4509-ad7d-c222238f8231",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 89,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "3ca1ec46-9619-409c-910a-95eecb2abe18",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 89,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "3533c283-50f9-4a7c-825e-d99a83265039",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 89,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "b5c7591d-df99-4f45-8951-40719beedca7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 89,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "24369e80-859e-46d7-a670-df048ac07e29",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 89,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "c674c6ef-39c7-453a-a70e-1b86b4ac9012",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 88,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "7f6ca87a-cb46-4863-a9c0-2aa7aad5864a",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 88,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "b0f9e503-dcce-4b0b-9f31-7caa6ae512d4",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 88,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a7e07f4b-6dc8-41a4-a394-14173fa3cb71",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 88,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "286d5f13-23e6-4bc1-86a0-e9fa1223cdf7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.DateTime).Value = evt.Start;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 88,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "618fe586-73a4-46cd-bca6-a5d9edf4f838",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 87,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ae1a9eb7-e69b-4868-8f06-ddc006b8c9c6",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 87,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "ecc5b662-1ef1-4642-adb2-b32ad07ed607",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 87,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "df1ef49d-1496-4b7e-9a0c-0742417817c8",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 87,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "53ba4d33-a773-42b3-ada3-b309d20181c1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@description\u0022, SqlDbType.VarChar).Value = evt.Description;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 87,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "3583eca8-b7dc-434d-8a6d-1635c1ac2cc1",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 86,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "3191ef9a-f666-4489-bb07-de5a6231c29d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 86,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a2ff64ee-2dbb-4c78-912b-e004cc22de40",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 86,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "23a52e07-bdf5-4d1c-823e-5420352a9141",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 86,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "a014ca48-25b6-4526-8f1a-39d0dc282828",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@title\u0022, SqlDbType.VarChar).Value = evt.Title;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 86,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "4b927763-49ed-4a73-8aa1-971e00418182",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 85,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "407ceeec-e1e8-414f-8c21-9f7e15210868",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 85,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "3364a1e1-e54e-487c-978f-045f542f984d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 85,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "1e7f006f-19ce-4c4f-ad72-96c95aa3c232",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 85,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "746736a5-805e-4271-ae21-e34cb09f6750",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@eventId\u0022, SqlDbType.Int).Value = evt.EventId;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 85,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "dd7c9c85-2306-4cc9-85e2-03610faa11b9",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022update\r\n\t                                                [Events]\r\n                                                set\r\n\t                                                [description]=@description\r\n                                                    ,title=@title\r\n\t                                                ,event_start=@start\r\n\t                                                ,event_end=@end \r\n\t                                                ,all_day=@allDay\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "P:System.Data.SqlClient.SqlCommand.CommandType"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022update\r\n\t                                                [Events]\r\n                                                set\r\n\t                                                [description]=@description\r\n                                                    ,title=@title\r\n\t                                                ,event_start=@start\r\n\t                                                ,event_end=@end \r\n\t                                                ,all_day=@allDay\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "label": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 73,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "6f3d5fdb-8dc5-4e0a-bd12-b9a02bc6ea44",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022update\r\n\t                                                [Events]\r\n                                                set\r\n\t                                                [description]=@description\r\n                                                    ,title=@title\r\n\t                                                ,event_start=@start\r\n\t                                                ,event_end=@end \r\n\t                                                ,all_day=@allDay\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "T:System.Data.SqlClient.SqlCommand"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022update\r\n\t                                                [Events]\r\n                                                set\r\n\t                                                [description]=@description\r\n                                                    ,title=@title\r\n\t                                                ,event_start=@start\r\n\t                                                ,event_end=@end \r\n\t                                                ,all_day=@allDay\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlCommand",
+            "label": "T:System.Data.SqlClient.SqlCommand",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 73,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "e6f2d2d3-cf78-4acf-ab53-47e169a864ea",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlCommand cmd = new SqlCommand(@\u0022update\r\n\t                                                [Events]\r\n                                                set\r\n\t                                                [description]=@description\r\n                                                    ,title=@title\r\n\t                                                ,event_start=@start\r\n\t                                                ,event_end=@end \r\n\t                                                ,all_day=@allDay\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+              "protected": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlCommand cmd = new SqlCommand(@\u0022update\r\n\t                                                [Events]\r\n                                                set\r\n\t                                                [description]=@description\r\n                                                    ,title=@title\r\n\t                                                ,event_start=@start\r\n\t                                                ,event_end=@end \r\n\t                                                ,all_day=@allDay\r\n                                                where\r\n\t                                                event_id=@eventId\u0022, conn, trans) {\r\n                    CommandType = CommandType.Text\r\n                };",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)",
+            "label": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 73,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "39ff85ea-e3dd-4006-b99d-5dadc6ab1e79",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlTransaction trans = conn.BeginTransaction();",
+              "protected": "T:System.Data.SqlClient.SqlTransaction"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlTransaction trans = conn.BeginTransaction();",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlTransaction",
+            "label": "T:System.Data.SqlClient.SqlTransaction",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 70,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5e03d1cc-febf-448d-9ab4-f8589d7882a0",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlTransaction trans = conn.BeginTransaction();",
+              "protected": "M:System.Data.SqlClient.SqlConnection.BeginTransaction"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlTransaction trans = conn.BeginTransaction();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlConnection.BeginTransaction",
+            "label": "M:System.Data.SqlClient.SqlConnection.BeginTransaction",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 70,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "7fc7b048-adc9-4a79-bc2c-e01ddd09fce7",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlConnection conn = GetConnection();",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlConnection conn = GetConnection();",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 69,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "935c88fc-1fc6-4e78-b843-63445197b25b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+              "protected": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "label": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 51,
+            "column": 28
+          }
+        },
+        {
+          "incidentId": "7e10e9c3-50cd-4a7b-b7aa-2ea934feab1e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+              "protected": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "label": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 51,
+            "column": 28
+          }
+        },
+        {
+          "incidentId": "cdaed6a7-161e-433a-aad8-4f798e50c391",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+              "protected": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "label": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 51,
+            "column": 28
+          }
+        },
+        {
+          "incidentId": "215fcd35-efd2-4f4c-a257-4e8eda7db2d3",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+              "protected": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "label": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 51,
+            "column": 28
+          }
+        },
+        {
+          "incidentId": "28aa8d81-1ff6-4a94-9cff-affb6837fb41",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+              "protected": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "label": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 51,
+            "column": 28
+          }
+        },
+        {
+          "incidentId": "422c9749-63de-46f7-acfe-9c0a2a21f59c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+              "protected": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "label": "P:System.Data.SqlClient.SqlDataReader.Item(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 51,
+            "column": 28
+          }
+        },
+        {
+          "incidentId": "ed2af515-6065-413e-8b9a-dac463532758",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }",
+              "protected": "M:System.Data.SqlClient.SqlDataReader.Read"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlDataReader.Read",
+            "label": "M:System.Data.SqlClient.SqlDataReader.Read",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 50,
+            "column": 24
+          }
+        },
+        {
+          "incidentId": "ff4b8902-8cfc-42cd-93ee-0b4a126d226a",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }",
+              "protected": "T:System.Data.SqlClient.SqlDataReader"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlDataReader",
+            "label": "T:System.Data.SqlClient.SqlDataReader",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 49,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "92e4e14f-ac04-4450-8bb5-8ee0fa611d03",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }",
+              "protected": "M:System.Data.SqlClient.SqlCommand.ExecuteReader"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.ExecuteReader",
+            "label": "M:System.Data.SqlClient.SqlCommand.ExecuteReader",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 49,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "5b2133f3-501b-4fe4-a123-0781e99c7fdd",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 47,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "833481b5-e991-4601-82c6-c1e0208484a3",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 47,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "53ed59f4-5856-4809-9b3d-9e723c46ae84",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 47,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "f03dac64-aad8-4c82-bcb1-c2b59934ed9f",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 47,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "f067e9f0-6acd-4cc6-af0f-e6a33d88faae",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 47,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "607a4ffb-b6eb-49b1-a021-acc306c2a7ab",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+              "protected": "T:System.Data.SqlClient.SqlParameterCollection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameterCollection",
+            "label": "T:System.Data.SqlClient.SqlParameterCollection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 46,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "442ca520-d570-42fb-954b-d6bf55fad24e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+              "protected": "P:System.Data.SqlClient.SqlCommand.Parameters"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "label": "P:System.Data.SqlClient.SqlCommand.Parameters",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 46,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "475e4973-6bb8-415f-a5be-87ceec38db43",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+              "protected": "T:System.Data.SqlClient.SqlParameter"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlParameter",
+            "label": "T:System.Data.SqlClient.SqlParameter",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 46,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "6b735d64-8540-4d9d-bf90-43feba43464c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+              "protected": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "label": "M:System.Data.SqlClient.SqlParameterCollection.Add(System.String,System.Data.SqlDbType)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 46,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "5d3d8e49-fc58-4693-85d9-fb23787b9c7e",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+              "protected": "P:System.Data.SqlClient.SqlParameter.Value"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlParameter.Value",
+            "label": "P:System.Data.SqlClient.SqlParameter.Value",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 46,
+            "column": 20
+          }
+        },
+        {
+          "incidentId": "42d96648-5fc5-41db-a889-330a2b34d5cb",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }",
+              "protected": "P:System.Data.SqlClient.SqlCommand.CommandType"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }",
+            "protectedSnippet": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "label": "P:System.Data.SqlClient.SqlCommand.CommandType",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 33,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "b29fd75c-047c-4b0a-b53f-792b3b8e597b",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }",
+              "protected": "T:System.Data.SqlClient.SqlCommand"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlCommand",
+            "label": "T:System.Data.SqlClient.SqlCommand",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 33,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "60b9436a-ebc3-49bd-855c-5edc09b692bf",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }",
+              "protected": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection)",
+            "label": "M:System.Data.SqlClient.SqlCommand.#ctor(System.String,System.Data.SqlClient.SqlConnection)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 33,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "402b607a-bbf5-449d-b0c4-ed10b8303c5c",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "using (SqlConnection conn = GetConnection()) {\r\n                using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }\r\n            }",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "using (SqlConnection conn = GetConnection()) {\r\n                using (SqlCommand cmd = new SqlCommand(@\u0022select\r\n                                                            event_id\r\n                                                            ,title\r\n                                                            ,[description]\r\n                                                            ,event_start\r\n                                                            ,event_end\r\n                                                            ,all_day\r\n                                                        from\r\n                                                            [Events]\r\n                                                        where\r\n                                                            event_start between @start and @end\u0022, conn) {\r\n                    CommandType = CommandType.Text\r\n                }) {\r\n                    cmd.Parameters.Add(\u0022@start\u0022, SqlDbType.VarChar).Value = start;\r\n                    cmd.Parameters.Add(\u0022@end\u0022, SqlDbType.VarChar).Value = end;\r\n\r\n                    using (SqlDataReader dr = cmd.ExecuteReader()) {\r\n                        while (dr.Read()) {\r\n                            events.Add(new Event() {\r\n                                EventId = Convert.ToInt32(dr[\u0022event_id\u0022]),\r\n                                Title = Convert.ToString(dr[\u0022title\u0022]),\r\n                                Description = Convert.ToString(dr[\u0022description\u0022]),\r\n                                Start = Convert.ToString(dr[\u0022event_start\u0022]),\r\n                                End = Convert.ToString(dr[\u0022event_end\u0022]),\r\n                                AllDay = Convert.ToBoolean(dr[\u0022all_day\u0022])\r\n                            });\r\n                        }\r\n                    }\r\n                }\r\n            }",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 32,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "021431ab-c028-465d-b3eb-15b740472e31",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private void CloseConnection(SqlConnection conn)",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "private void CloseConnection(SqlConnection conn)",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 25,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "8dfb9eb2-97cb-4d4f-8b67-aef268997cd0",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "conn.Close();",
+              "protected": "M:System.Data.SqlClient.SqlConnection.Close"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "conn.Close();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlConnection.Close",
+            "label": "M:System.Data.SqlClient.SqlConnection.Close",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 26,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "d6bf940d-ea2f-460f-9fe0-612eb897b0ae",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "private SqlConnection GetConnection()",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "private SqlConnection GetConnection()",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 18,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "161f0c9f-52d2-4523-9c54-fc7fc97ea8fe",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "conn.Open();",
+              "protected": "M:System.Data.SqlClient.SqlConnection.Open"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "conn.Open();",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlConnection.Open",
+            "label": "M:System.Data.SqlClient.SqlConnection.Open",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 20,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "f4c78b57-801c-44b6-a2a2-41de8e0dba3d",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlConnection conn = new SqlConnection(_ConnectionStrVC);",
+              "protected": "T:System.Data.SqlClient.SqlConnection"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlConnection conn = new SqlConnection(_ConnectionStrVC);",
+            "protectedSnippet": "T:System.Data.SqlClient.SqlConnection",
+            "label": "T:System.Data.SqlClient.SqlConnection",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 19,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "95d6c1c6-d845-477a-ba86-de91157ae4a3",
+          "ruleId": "Api.0002",
+          "description": "API is available in package System.Data.SqlClient, 4.8.6. Add package reference to System.Data.SqlClient, 4.8.6",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "SqlConnection conn = new SqlConnection(_ConnectionStrVC);",
+              "protected": "M:System.Data.SqlClient.SqlConnection.#ctor(System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\DataAccessLayer\\DA.cs",
+            "snippet": "SqlConnection conn = new SqlConnection(_ConnectionStrVC);",
+            "protectedSnippet": "M:System.Data.SqlClient.SqlConnection.#ctor(System.String)",
+            "label": "M:System.Data.SqlClient.SqlConnection.#ctor(System.String)",
+            "properties": {
+              "PackageId": "System.Data.SqlClient",
+              "PackageNewVersion": "4.8.6"
+            },
+            "line": 19,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "c268c479-3e2c-43dd-9e06-60f194b45284",
+          "ruleId": "Api.0002",
+          "description": "WebHostBuilder, IWebHost, and WebHost are obsolete ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "WebHost.CreateDefaultBuilder(args)",
+              "protected": "T:Microsoft.AspNetCore.WebHost"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Program.cs",
+            "snippet": "WebHost.CreateDefaultBuilder(args)",
+            "protectedSnippet": "T:Microsoft.AspNetCore.WebHost",
+            "label": "T:Microsoft.AspNetCore.WebHost",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/aspnet-core/10/webhostbuilder-deprecated.md",
+                "isCustom": false
+              }
+            ],
+            "line": 19,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "5ed896c4-e42c-4fd0-bd5a-947b2fa09767",
+          "ruleId": "Api.0002",
+          "description": "WebHostBuilder, IWebHost, and WebHost are obsolete ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "CreateWebHostBuilder(args).Build().Run();",
+              "protected": "T:Microsoft.AspNetCore.Hosting.IWebHost"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Program.cs",
+            "snippet": "CreateWebHostBuilder(args).Build().Run();",
+            "protectedSnippet": "T:Microsoft.AspNetCore.Hosting.IWebHost",
+            "label": "T:Microsoft.AspNetCore.Hosting.IWebHost",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/aspnet-core/10/webhostbuilder-deprecated.md",
+                "isCustom": false
+              }
+            ],
+            "line": 15,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "dadbb0cd-2c09-4478-b014-d93954b18864",
+          "ruleId": "Api.0002",
+          "description": "This type is obsolete and will be removed in a future version. The recommended alternative is Microsoft.AspNetCore.Hosting.IWebHostEnvironment. Microsoft.Extensions.Hosting",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "public void Configure(IApplicationBuilder app, IHostingEnvironment env)",
+              "protected": "T:Microsoft.AspNetCore.Hosting.IHostingEnvironment"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Startup.cs",
+            "snippet": "public void Configure(IApplicationBuilder app, IHostingEnvironment env)",
+            "protectedSnippet": "T:Microsoft.AspNetCore.Hosting.IHostingEnvironment",
+            "label": "T:Microsoft.AspNetCore.Hosting.IHostingEnvironment",
+            "line": 36,
+            "column": 8
+          }
+        },
+        {
+          "incidentId": "ae91b78d-0342-4050-bda9-a95188f75368",
+          "ruleId": "Api.0003",
+          "description": "Breaking change: Exception diagnostics are suppressed when IExceptionHandler.TryHandleAsync returns true ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "app.UseExceptionHandler(\u0022/Home/Error\u0022);",
+              "protected": "M:Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.UseExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Startup.cs",
+            "snippet": "app.UseExceptionHandler(\u0022/Home/Error\u0022);",
+            "protectedSnippet": "M:Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.UseExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)",
+            "label": "M:Microsoft.AspNetCore.Builder.ExceptionHandlerExtensions.UseExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/aspnet-core/10/exception-handler-diagnostics-suppressed.md",
+                "isCustom": false
+              }
+            ],
+            "line": 40,
+            "column": 16
+          }
+        },
+        {
+          "incidentId": "41a77744-14b6-474d-92d8-3453086f972f",
+          "ruleId": "Api.0001",
+          "description": "Breaking change: DynamicallyAccessedMembers annotation removed from trim-unsafe configuration APIs ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "services.Configure\u003CAppSettings\u003E(Configuration.GetSection(\u0022AppSettings\u0022));",
+              "protected": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Startup.cs",
+            "snippet": "services.Configure\u003CAppSettings\u003E(Configuration.GetSection(\u0022AppSettings\u0022));",
+            "protectedSnippet": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)",
+            "label": "M:Microsoft.Extensions.DependencyInjection.OptionsConfigurationServiceCollectionExtensions.Configure\u0060\u00601(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://github.com/dotnet/docs/blob/main/docs/core/compatibility/extensions/10.0/dynamically-accessed-members-configuration.md",
+                "isCustom": false
+              }
+            ],
+            "line": 32,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "ec14b047-d88d-45c5-b60a-a673ea49b7e6",
+          "ruleId": "Api.0002",
+          "description": "This API is obsolete and will be removed in a future version. Consider removing usages. ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+              "protected": "T:Microsoft.AspNetCore.Mvc.CompatibilityVersion"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Startup.cs",
+            "snippet": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+            "protectedSnippet": "T:Microsoft.AspNetCore.Mvc.CompatibilityVersion",
+            "label": "T:Microsoft.AspNetCore.Mvc.CompatibilityVersion",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://aka.ms/aspnetcore-warnings/ASP5001",
+                "isCustom": false
+              }
+            ],
+            "line": 30,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "6ef3d6fe-822a-4e67-8d98-3fe70169686f",
+          "ruleId": "Api.0002",
+          "description": "This API is obsolete and will be removed in a future version. Consider removing usages. ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+              "protected": "T:Microsoft.AspNetCore.Mvc.CompatibilityVersion"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Startup.cs",
+            "snippet": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+            "protectedSnippet": "T:Microsoft.AspNetCore.Mvc.CompatibilityVersion",
+            "label": "T:Microsoft.AspNetCore.Mvc.CompatibilityVersion",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://aka.ms/aspnetcore-warnings/ASP5001",
+                "isCustom": false
+              }
+            ],
+            "line": 30,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "0a1e294a-fd8c-4ca8-b673-e45cbf584eae",
+          "ruleId": "Api.0002",
+          "description": "This CompatibilityVersion value is obsolete. ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+              "protected": "F:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Startup.cs",
+            "snippet": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+            "protectedSnippet": "F:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1",
+            "label": "F:Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1",
+            "line": 30,
+            "column": 12
+          }
+        },
+        {
+          "incidentId": "8025233f-b8bf-4add-9a77-51b0fe01e537",
+          "ruleId": "Api.0002",
+          "description": "This API is obsolete and will be removed in a future version. Consider removing usages. ",
+          "projectPath": "fullcalendar-core\\fullcalendar-core.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+              "protected": "M:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion(Microsoft.Extensions.DependencyInjection.IMvcBuilder,Microsoft.AspNetCore.Mvc.CompatibilityVersion)"
+            },
+            "kind": "File",
+            "path": "fullcalendar-core\\Startup.cs",
+            "snippet": "services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);",
+            "protectedSnippet": "M:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion(Microsoft.Extensions.DependencyInjection.IMvcBuilder,Microsoft.AspNetCore.Mvc.CompatibilityVersion)",
+            "label": "M:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion(Microsoft.Extensions.DependencyInjection.IMvcBuilder,Microsoft.AspNetCore.Mvc.CompatibilityVersion)",
+            "links": [
+              {
+                "title": "API documentation",
+                "url": "https://aka.ms/aspnetcore-warnings/ASP5001",
+                "isCustom": false
+              }
+            ],
+            "line": 30,
+            "column": 12
+          }
+        }
+      ],
+      "features": []
+    }
+  ],
+  "rules": {
+    "NuGet.0003": {
+      "id": "NuGet.0003",
+      "isFeature": false,
+      "description": "NuGet package functionality is included with framework reference.\n\nPackage needs to be removed.",
+      "label": "NuGet package functionality is included with framework reference",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262609",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "isFeature": false,
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in modern .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0002": {
+      "id": "Api.0002",
+      "isFeature": false,
+      "description": "API is source incompatible for selected .NET version: requires code changes to compile successfully when targeting a new version, such as removing obsolete APIs or changing method signatures.",
+      "label": "Source incompatible for selected .NET version",
+      "severity": "Potential",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    },
+    "Api.0003": {
+      "id": "Api.0003",
+      "isFeature": false,
+      "description": "API has a behavioral change in selected .NET version: code and binaries may behave differently at runtime without needing recompilation, but the new behavior might be undesirable and require updates.",
+      "label": "Behavioral change in selected .NET version",
+      "severity": "Potential",
+      "effort": 1
+    },
+    "Api.0001": {
+      "id": "Api.0001",
+      "isFeature": false,
+      "description": "API is binary incompatible for selected .NET version: affects existing binaries, often requiring recompilation, because the API has changed in a way that prevents older binaries from loading or executing.",
+      "label": "Binary incompatible for selected .NET version",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Breaking changes in .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2262679",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
