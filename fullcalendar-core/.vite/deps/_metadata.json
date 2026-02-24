@@ -1,0 +1,82 @@
+{
+  "hash": "69474557",
+  "configHash": "f27257ca",
+  "lockfileHash": "d48196b2",
+  "browserHash": "db2b8284",
+  "optimized": {
+    "@fullcalendar/core": {
+      "src": "../../node_modules/@fullcalendar/core/index.js",
+      "file": "@fullcalendar_core.js",
+      "fileHash": "59946674",
+      "needsInterop": false
+    },
+    "@fullcalendar/core/index.js": {
+      "src": "../../node_modules/@fullcalendar/core/index.js",
+      "file": "@fullcalendar_core_index__js.js",
+      "fileHash": "debfb9f3",
+      "needsInterop": false
+    },
+    "@fullcalendar/daygrid": {
+      "src": "../../node_modules/@fullcalendar/daygrid/index.js",
+      "file": "@fullcalendar_daygrid.js",
+      "fileHash": "b60f7900",
+      "needsInterop": false
+    },
+    "@fullcalendar/interaction": {
+      "src": "../../node_modules/@fullcalendar/interaction/index.js",
+      "file": "@fullcalendar_interaction.js",
+      "fileHash": "1d25bb8f",
+      "needsInterop": false
+    },
+    "@fullcalendar/timegrid": {
+      "src": "../../node_modules/@fullcalendar/timegrid/index.js",
+      "file": "@fullcalendar_timegrid.js",
+      "fileHash": "e7ec0a12",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "6ecfe10d",
+      "needsInterop": false
+    },
+    "bootstrap": {
+      "src": "../../node_modules/bootstrap/dist/js/bootstrap.esm.js",
+      "file": "bootstrap.js",
+      "fileHash": "3bbd3884",
+      "needsInterop": false
+    },
+    "flatpickr": {
+      "src": "../../node_modules/flatpickr/dist/esm/index.js",
+      "file": "flatpickr.js",
+      "fileHash": "bf0ef6cc",
+      "needsInterop": false
+    },
+    "jquery": {
+      "src": "../../node_modules/jquery/dist/jquery.js",
+      "file": "jquery.js",
+      "fileHash": "a24b4a2c",
+      "needsInterop": true
+    },
+    "qtip2": {
+      "src": "../../node_modules/qtip2/dist/jquery.qtip.js",
+      "file": "qtip2.js",
+      "fileHash": "8b13de33",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-2KTK3L73": {
+      "file": "chunk-2KTK3L73.js"
+    },
+    "chunk-ULJGACYD": {
+      "file": "chunk-ULJGACYD.js"
+    },
+    "chunk-7JOVZKYS": {
+      "file": "chunk-7JOVZKYS.js"
+    },
+    "chunk-HKJ2B2AA": {
+      "file": "chunk-HKJ2B2AA.js"
+    }
+  }
+}

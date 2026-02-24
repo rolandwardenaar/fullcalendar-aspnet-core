@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using fullcalendarcore.DataAccessLayer;
 
 namespace fullcalendarcore
 {
@@ -28,14 +29,29 @@ namespace fullcalendarcore
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddControllersWithViews();
 
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
+            // Add CORS policy
+            services.AddCors(options =>
+            {
+                options.AddPolicy("_myAllowSpecificOrigins", builder =>
+                {
+                    builder.WithOrigins("https://agenda.wardenaar.org")
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+            // Initialize SQLite database
+            var connectionString = Configuration.GetSection("AppSettings")["ConnectionStr"];
+            var dbInitializer = new DatabaseInitializer(connectionString);
+            dbInitializer.Initialize();
+
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             } else {
@@ -46,6 +62,13 @@ namespace fullcalendarcore
             app.UseCookiePolicy();
 
             app.UseRouting();
+            app.UseHttpsRedirection();
+
+            var corsPolicy = "_myAllowSpecificOrigins";
+
+            
+
+            app.UseCors(corsPolicy);
 
             app.UseEndpoints(endpoints => {
                 endpoints.MapControllerRoute(

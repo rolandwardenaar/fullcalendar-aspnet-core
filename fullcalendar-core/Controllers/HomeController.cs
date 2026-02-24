@@ -27,15 +27,44 @@ namespace fullcalendarcore.Controllers
 
         [HttpGet]
         public IActionResult GetCalendarEvents(string start, string end) {
-            List<Event> events = _DA.GetCalendarEvents(start, end);
+            // Convert JavaScript date strings to ISO format for SQLite
+            DateTime startDate = DateTime.Parse(start);
+            DateTime endDate = DateTime.Parse(end);
 
-            return Json(events);
+            string startISO = startDate.ToString("yyyy-MM-dd HH:mm:ss");
+            string endISO = endDate.ToString("yyyy-MM-dd HH:mm:ss");
+
+            List<Event> events = _DA.GetCalendarEvents(startISO, endISO);
+
+            // Map to FullCalendar format with 'id' instead of 'EventId'
+            var calendarEvents = events.Select(e => new {
+                id = e.EventId,  // FullCalendar expects lowercase 'id'
+                title = e.Title,
+                start = e.Start,
+                end = e.End,
+                allDay = e.AllDay,
+                extendedProps = new {
+                    description = e.Description,
+                    eventId = e.EventId  // Keep original EventId in extendedProps for backend calls
+                }
+            });
+
+            return Json(calendarEvents);
         }
 
         [HttpPost]
         public IActionResult UpdateEvent([FromBody] Event evt) 
         {
+            if (evt == null || evt.EventId <= 0)
+            {
+                return BadRequest("Invalid event data.");
+            }
+
             string message = String.Empty;
+
+            // Convert to ISO format for database storage
+            evt.Start = ParseAndFormatDate(evt.Start);
+            evt.End = string.IsNullOrEmpty(evt.End) ? null : ParseAndFormatDate(evt.End);
 
             message = _DA.UpdateEvent(evt);
 
@@ -47,6 +76,10 @@ namespace fullcalendarcore.Controllers
         {
             string message = String.Empty;
             int eventId = 0;
+
+            // Convert to ISO format for database storage
+            evt.Start = ParseAndFormatDate(evt.Start);
+            evt.End = string.IsNullOrEmpty(evt.End) ? null : ParseAndFormatDate(evt.End);
 
             message = _DA.AddEvent(evt, out eventId);
 
@@ -60,6 +93,62 @@ namespace fullcalendarcore.Controllers
             message = _DA.DeleteEvent(evt.EventId);
 
             return Json(new { message });
+        }
+
+        private string ParseAndFormatDate(string dateStr)
+        {
+            if (string.IsNullOrEmpty(dateStr)) return null;
+
+            // Remove comma if present
+            dateStr = dateStr.Replace(",", "").Trim();
+
+            // Try ISO format first (yyyy-MM-dd HH:mm:ss)
+            if (DateTime.TryParseExact(dateStr, "yyyy-MM-dd HH:mm:ss",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None, out DateTime isoDateTime))
+            {
+                return isoDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            // Try ISO format with T separator (yyyy-MM-ddTHH:mm:ss)
+            if (DateTime.TryParseExact(dateStr, "yyyy-MM-ddTHH:mm:ss",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None, out DateTime isoTDateTime))
+            {
+                return isoTDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            // Try Dutch format from flatpickr (dd-MM-yyyy HH:mm)
+            if (DateTime.TryParseExact(dateStr, "dd-MM-yyyy HH:mm",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None, out DateTime nlDateTime))
+            {
+                return nlDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            // Try Dutch format with seconds (dd-MM-yyyy HH:mm:ss)
+            if (DateTime.TryParseExact(dateStr, "dd-MM-yyyy HH:mm:ss",
+                System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.None, out DateTime nlDateTimeSeconds))
+            {
+                return nlDateTimeSeconds.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            // Try JavaScript ISO string format
+            if (DateTime.TryParse(dateStr, System.Globalization.CultureInfo.InvariantCulture,
+                System.Globalization.DateTimeStyles.RoundtripKind, out DateTime jsDate))
+            {
+                return jsDate.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            // Last resort: try with Dutch culture
+            if (DateTime.TryParse(dateStr, new System.Globalization.CultureInfo("nl-NL"),
+                System.Globalization.DateTimeStyles.None, out DateTime nlDate))
+            {
+                return nlDate.ToString("yyyy-MM-dd HH:mm:ss");
+            }
+
+            return dateStr; // Return as-is if parsing fails
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

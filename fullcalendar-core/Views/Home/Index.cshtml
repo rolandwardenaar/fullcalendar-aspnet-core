@@ -2,53 +2,54 @@
     <div id='calendar'></div>
 </div>
 
-<div class="modal fade" id="eventModal" role="dialog" aria-labelledby="eventModalLabel">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="eventModalLabel">Event</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title" id="eventModalLabel">Evenement</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
             </div>
             <div class="modal-body">
                 <form id="eventForm">
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label">Title</label>
+                    <div class="mb-3 row">
+                        <label for="EventTitle" class="col-sm-3 col-form-label">Titel</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="EventTitle">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label">Start Time</label>
+                    <div class="mb-3 row">
+                        <label for="StartTime" class="col-sm-3 col-form-label">Starttijd</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="StartTime">
+                            <input type="text" class="form-control" id="StartTime" placeholder="dd-mm-yyyy uu:mm">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label">End Time</label>
+                    <div class="mb-3 row">
+                        <label for="EndTime" class="col-sm-3 col-form-label">Eindtijd</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="EndTime">
+                            <input type="text" class="form-control" id="EndTime" placeholder="dd-mm-yyyy uu:mm">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="" class="col-sm-3 col-form-label">Description</label>
+                    <div class="mb-3 row">
+                        <label for="Description" class="col-sm-3 col-form-label">Beschrijving</label>
                         <div class="col-sm-9">
                             <textarea class="form-control" id="Description" rows="5"></textarea>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-sm-3 offset-sm-9">
-                            <label><input type="checkbox" id="AllDay" /> All Day</label>
+                    <div class="mb-3 row">
+                        <div class="col-sm-9 offset-sm-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="AllDay" />
+                                <label class="form-check-label" for="AllDay">Hele dag</label>
+                            </div>
                         </div>
                     </div>
                     <input type="hidden" id="isNewEvent" />
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="deleteEvent">Delete</button>
-                <div>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="eventModalSave">Save Changes</button>
-                </div>
+                <button type="button" class="btn btn-danger" id="deleteEvent">Verwijderen</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
+                <button type="button" class="btn btn-primary" id="eventModalSave">Opslaan</button>
             </div>
         </div>
     </div>

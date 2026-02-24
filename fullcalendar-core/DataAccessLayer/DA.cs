@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Data.Sqlite;
 
 namespace fullcalendarcore.DataAccessLayer
 {
@@ -16,38 +16,36 @@ namespace fullcalendarcore.DataAccessLayer
             _ConnectionStrVC = ConnectionStrVC;
         }
 
-        private SqlConnection GetConnection() {
-            SqlConnection conn = new SqlConnection(_ConnectionStrVC);
+        private SqliteConnection GetConnection() {
+            SqliteConnection conn = new SqliteConnection(_ConnectionStrVC);
             conn.Open();
 
             return conn;
         }
 
-        private void CloseConnection(SqlConnection conn) {
+        private void CloseConnection(SqliteConnection conn) {
             conn.Close();
         }
         
         public List<Event> GetCalendarEvents(string start, string end) {
             List<Event> events = new List<Event>();
 
-            using (SqlConnection conn = GetConnection()) {
-                using (SqlCommand cmd = new SqlCommand(@"select
+            using (SqliteConnection conn = GetConnection()) {
+                using (SqliteCommand cmd = new SqliteCommand(@"select
                                                             event_id
                                                             ,title
-                                                            ,[description]
+                                                            ,description
                                                             ,event_start
                                                             ,event_end
                                                             ,all_day
                                                         from
-                                                            [Events]
+                                                            Events
                                                         where
-                                                            event_start between @start and @end", conn) {
-                    CommandType = CommandType.Text
-                }) {
-                    cmd.Parameters.Add("@start", SqlDbType.VarChar).Value = start;
-                    cmd.Parameters.Add("@end", SqlDbType.VarChar).Value = end;
+                                                            event_start between @start and @end", conn)) {
+                    cmd.Parameters.AddWithValue("@start", start);
+                    cmd.Parameters.AddWithValue("@end", end);
 
-                    using (SqlDataReader dr = cmd.ExecuteReader()) {
+                    using (SqliteDataReader dr = cmd.ExecuteReader()) {
                         while (dr.Read()) {
                             events.Add(new Event() {
                                 EventId = Convert.ToInt32(dr["event_id"]),
@@ -65,112 +63,106 @@ namespace fullcalendarcore.DataAccessLayer
             return events;
         }
 
-        public string UpdateEvent(Event evt) {
-            string message = "";
-            SqlConnection conn = GetConnection();
-            SqlTransaction trans = conn.BeginTransaction();
+		public string UpdateEvent(Event evt) {
+			string message = "";
+			SqliteConnection conn = GetConnection();
+			SqliteTransaction trans = conn.BeginTransaction();
 
-            try {
-                SqlCommand cmd = new SqlCommand(@"update
-	                                                [Events]
-                                                set
-	                                                [description]=@description
-                                                    ,title=@title
-	                                                ,event_start=@start
-	                                                ,event_end=@end 
-	                                                ,all_day=@allDay
-                                                where
-	                                                event_id=@eventId", conn, trans) {
-                    CommandType = CommandType.Text
-                };
-                cmd.Parameters.Add("@eventId", SqlDbType.Int).Value = evt.EventId;
-                cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = evt.Title;
-                cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = evt.Description;
-                cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = evt.Start;
-                cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);
-                cmd.Parameters.Add("@allDay", SqlDbType.Bit).Value = evt.AllDay;
-                cmd.ExecuteNonQuery();
+			try {
+				SqliteCommand cmd = new SqliteCommand(@"update
+													Events
+												set
+													description=@description
+													,title=@title
+													,event_start=@start
+													,event_end=@end 
+													,all_day=@allDay
+												where
+													event_id=@eventId", conn, trans);
+				cmd.Parameters.AddWithValue("@eventId", evt.EventId);
+				cmd.Parameters.AddWithValue("@title", evt.Title);
+				cmd.Parameters.AddWithValue("@description", evt.Description);
+				cmd.Parameters.AddWithValue("@start", evt.Start);
+				cmd.Parameters.AddWithValue("@end", Helpers.ToDBNullOrDefault(evt.End));
+				cmd.Parameters.AddWithValue("@allDay", evt.AllDay);
+				cmd.ExecuteNonQuery();
 
-                trans.Commit();
-            } catch (Exception exp) {
-                trans.Rollback();
-                message = exp.Message;
-            } finally {
-                CloseConnection(conn);
-            }
+				trans.Commit();
+			} catch (Exception exp) {
+				trans.Rollback();
+				message = exp.Message;
+			} finally {
+				CloseConnection(conn);
+			}
 
-            return message;
-        }
+			return message;
+		}
 
-        public string AddEvent(Event evt, out int eventId) {
-            string message = "";
-            SqlConnection conn = GetConnection();
-            SqlTransaction trans = conn.BeginTransaction();
-            eventId = 0;
+		public string AddEvent(Event evt, out int eventId) {
+			string message = "";
+			SqliteConnection conn = GetConnection();
+			SqliteTransaction trans = conn.BeginTransaction();
+			eventId = 0;
 
-            try {
-                SqlCommand cmd = new SqlCommand(@"insert into [Events]
-                                                (
-	                                                title
-	                                                ,[description]
-	                                                ,event_start
-	                                                ,event_end
-	                                                ,all_day
-                                                )
-                                                values
-                                                (
-	                                                @title
-	                                                ,@description
-	                                                ,@start
-	                                                ,@end
-	                                                ,@allDay
-                                                );
-                                                select scope_identity()", conn, trans) {
-                    CommandType = CommandType.Text
-                };
-                cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = evt.Title;
-                cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = evt.Description;
-                cmd.Parameters.Add("@start", SqlDbType.DateTime).Value = evt.Start;
-                cmd.Parameters.Add("@end", SqlDbType.DateTime).Value = Helpers.ToDBNullOrDefault(evt.End);
-                cmd.Parameters.Add("@allDay", SqlDbType.Bit).Value = evt.AllDay;
+			try {
+				SqliteCommand cmd = new SqliteCommand(@"insert into Events
+												(
+													title
+													,description
+													,event_start
+													,event_end
+													,all_day
+												)
+												values
+												(
+													@title
+													,@description
+													,@start
+													,@end
+													,@allDay
+												);
+												select last_insert_rowid()", conn, trans);
+				cmd.Parameters.AddWithValue("@title", evt.Title);
+				cmd.Parameters.AddWithValue("@description", evt.Description);
+				cmd.Parameters.AddWithValue("@start", evt.Start);
+				cmd.Parameters.AddWithValue("@end", Helpers.ToDBNullOrDefault(evt.End));
+				cmd.Parameters.AddWithValue("@allDay", evt.AllDay);
 
-                eventId =  Convert.ToInt32(cmd.ExecuteScalar());
+				eventId =  Convert.ToInt32(cmd.ExecuteScalar());
 
-                trans.Commit();
-            } catch (Exception exp) {
-                trans.Rollback();
-                message = exp.Message;
-            } finally {
-                CloseConnection(conn);
-            }
+				trans.Commit();
+			} catch (Exception exp) {
+				trans.Rollback();
+				message = exp.Message;
+			} finally {
+				CloseConnection(conn);
+			}
 
-            return message;
-        }
+			return message;
+		}
 
-        public string DeleteEvent(int eventId) {
-            string message = "";
-            SqlConnection conn = GetConnection();
-            SqlTransaction trans = conn.BeginTransaction();
+		public string DeleteEvent(int eventId) {
+			string message = "";
+			SqliteConnection conn = GetConnection();
+			SqliteTransaction trans = conn.BeginTransaction();
 
-            try {
-                SqlCommand cmd = new SqlCommand(@"delete from 
-	                                                [Events]
-                                                where
-	                                                event_id=@eventId", conn, trans) {
-                    CommandType = CommandType.Text
-                };
-                cmd.Parameters.Add("@eventId", SqlDbType.Int).Value = eventId;
-                cmd.ExecuteNonQuery();
+			try {
+				SqliteCommand cmd = new SqliteCommand(@"delete from 
+													Events
+												where
+													event_id=@eventId", conn, trans);
+				cmd.Parameters.AddWithValue("@eventId", eventId);
+				cmd.ExecuteNonQuery();
 
-                trans.Commit();
-            } catch (Exception exp) {
-                trans.Rollback();
-                message = exp.Message;
-            } finally {
-                CloseConnection(conn);
-            }
+				trans.Commit();
+			} catch (Exception exp) {
+				trans.Rollback();
+				message = exp.Message;
+			} finally {
+				CloseConnection(conn);
+			}
 
-            return message;
-        }
+			return message;
+		}
     }
 }
