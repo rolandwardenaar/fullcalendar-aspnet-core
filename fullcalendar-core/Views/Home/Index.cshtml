@@ -1,9 +1,15 @@
 ﻿<div id="calendar-wrapper">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Mijn Agenda</h2>
+        <button type="button" class="btn btn-success" id="exportCalendar">
+            <i class="bi bi-download"></i> Exporteer naar iCal
+        </button>
+    </div>
     <div id='calendar'></div>
 </div>
 
 <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="eventModalLabel">Evenement</h5>
@@ -15,6 +21,20 @@
                         <label for="EventTitle" class="col-sm-3 col-form-label">Titel</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" id="EventTitle">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="EventType" class="col-sm-3 col-form-label">Type</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" id="EventType">
+                                <option value="0">📅 Afspraak</option>
+                                <option value="1">🎂 Verjaardag</option>
+                                <option value="2">💐 Jubileum</option>
+                                <option value="3">⏰ Herinnering</option>
+                                <option value="4">✓ Taak</option>
+                                <option value="5">🎉 Vakantie</option>
+                                <option value="6">📌 Overig</option>
+                            </select>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -32,7 +52,7 @@
                     <div class="mb-3 row">
                         <label for="Description" class="col-sm-3 col-form-label">Beschrijving</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" id="Description" rows="5"></textarea>
+                            <textarea class="form-control" id="Description" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="mb-3 row" id="userNameRow">
@@ -49,14 +69,98 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Recurrence Section -->
+                    <div class="mb-3 row">
+                        <div class="col-sm-9 offset-sm-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="IsRecurring" />
+                                <label class="form-check-label" for="IsRecurring">Herhalend evenement</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="recurrenceOptions" style="display: none;">
+                        <div class="mb-3 row">
+                            <label for="RecurrencePattern" class="col-sm-3 col-form-label">Herhaling</label>
+                            <div class="col-sm-9">
+                                <select class="form-select" id="RecurrencePattern">
+                                    <option value="0">Geen</option>
+                                    <option value="1">Dagelijks</option>
+                                    <option value="2">Wekelijks</option>
+                                    <option value="3">Maandelijks</option>
+                                    <option value="4">Jaarlijks</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="RecurrenceInterval" class="col-sm-3 col-form-label">Interval</label>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" id="RecurrenceInterval" min="1" value="1">
+                                <small class="form-text text-muted">Bijvoorbeeld: elke 2 weken = interval 2</small>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="RecurrenceEndDate" class="col-sm-3 col-form-label">Eindigt op</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="RecurrenceEndDate" placeholder="dd-mm-yyyy uu:mm">
+                                <small class="form-text text-muted">Optioneel - laat leeg voor oneindig</small>
+                            </div>
+                        </div>
+                    </div>
+
                     <input type="hidden" id="isNewEvent" />
                     <input type="hidden" id="isOwnEvent" />
                 </form>
             </div>
+            <div class="modal-footer d-flex justify-content-between">
+                <div>
+                    <button type="button" class="btn btn-info" id="shareEvent" style="display: none;">
+                        <i class="bi bi-share"></i> Delen
+                    </button>
+                    <button type="button" class="btn btn-success" id="exportEvent" style="display: none;">
+                        <i class="bi bi-download"></i> Exporteer
+                    </button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-danger" id="deleteEvent">Verwijderen</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
+                    <button type="button" class="btn btn-primary" id="eventModalSave">Opslaan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Share Modal -->
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="shareModalLabel">Evenement delen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Sluiten"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="shareWithUser" class="form-label">Deel met gebruiker:</label>
+                    <select class="form-select" id="shareWithUser">
+                        <option value="">Selecteer een gebruiker...</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="shareCanEdit" />
+                        <label class="form-check-label" for="shareCanEdit">Kan bewerken</label>
+                    </div>
+                </div>
+                <hr />
+                <h6>Gedeeld met:</h6>
+                <div id="sharedUsersList">
+                    <p class="text-muted">Nog niet gedeeld</p>
+                </div>
+            </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="deleteEvent">Verwijderen</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
-                <button type="button" class="btn btn-primary" id="eventModalSave">Opslaan</button>
+                <button type="button" class="btn btn-primary" id="shareModalSave">Delen</button>
             </div>
         </div>
     </div>

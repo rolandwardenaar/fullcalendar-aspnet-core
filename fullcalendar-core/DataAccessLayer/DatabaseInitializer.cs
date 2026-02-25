@@ -29,16 +29,48 @@ namespace fullcalendarcore.DataAccessLayer
                         event_end TEXT,
                         all_day INTEGER NOT NULL DEFAULT 0,
                         user_id TEXT,
-                        user_name TEXT
+                        user_name TEXT,
+                        event_type INTEGER NOT NULL DEFAULT 0,
+                        is_recurring INTEGER NOT NULL DEFAULT 0,
+                        recurrence_pattern INTEGER NOT NULL DEFAULT 0,
+                        recurrence_interval INTEGER NOT NULL DEFAULT 1,
+                        recurrence_end_date TEXT,
+                        parent_event_id INTEGER
                     )";
 
                 createTableCommand.ExecuteNonQuery();
+
+                // Create EventShares table if not exists
+                var createSharesTableCommand = connection.CreateCommand();
+                createSharesTableCommand.CommandText = @"
+                    CREATE TABLE IF NOT EXISTS EventShares (
+                        share_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        event_id INTEGER NOT NULL,
+                        owner_user_id TEXT NOT NULL,
+                        shared_with_user_id TEXT NOT NULL,
+                        shared_with_user_name TEXT,
+                        can_edit INTEGER NOT NULL DEFAULT 0,
+                        shared_date TEXT NOT NULL,
+                        FOREIGN KEY (event_id) REFERENCES Events(event_id) ON DELETE CASCADE
+                    )";
+
+                createSharesTableCommand.ExecuteNonQuery();
 
                 // Add user_id column if it doesn't exist (for existing databases)
                 AddColumnIfNotExists(connection, "Events", "user_id", "TEXT");
 
                 // Add user_name column if it doesn't exist (for existing databases)
                 AddColumnIfNotExists(connection, "Events", "user_name", "TEXT");
+
+                // Add event_type column if it doesn't exist
+                AddColumnIfNotExists(connection, "Events", "event_type", "INTEGER NOT NULL DEFAULT 0");
+
+                // Add recurrence columns if they don't exist
+                AddColumnIfNotExists(connection, "Events", "is_recurring", "INTEGER NOT NULL DEFAULT 0");
+                AddColumnIfNotExists(connection, "Events", "recurrence_pattern", "INTEGER NOT NULL DEFAULT 0");
+                AddColumnIfNotExists(connection, "Events", "recurrence_interval", "INTEGER NOT NULL DEFAULT 1");
+                AddColumnIfNotExists(connection, "Events", "recurrence_end_date", "TEXT");
+                AddColumnIfNotExists(connection, "Events", "parent_event_id", "INTEGER");
 
                 // Normalize existing date formats to ISO 8601
                 NormalizeDateFormats(connection);

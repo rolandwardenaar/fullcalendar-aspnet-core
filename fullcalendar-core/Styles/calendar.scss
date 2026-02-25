@@ -2,15 +2,34 @@
 #calendar-wrapper {
     min-height: 100vh;
     background-color: #f8f9fa;
+
+    .d-flex {
+        padding: 1rem 1rem 0 1rem;
+    }
 }
 
 #calendar {
-    position: fixed;
-    top: 0;
-    left: 0; // Will be next to sidebar
-    right: 0;
-    bottom: 0;
+    // No longer fixed position - let it flow in the main-content container
     padding: 1rem;
+    min-height: calc(100vh - 120px);
+}
+
+// Styling for shared events
+.shared-event {
+    position: relative;
+
+    &::before {
+        content: '🔗';
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        font-size: 0.8em;
+    }
+}
+
+// Other user events styling
+.other-user-event {
+    font-style: italic;
 }
 
 // Modern color scheme with better contrast
@@ -68,6 +87,7 @@
     // Calendar cells
     .fc-daygrid-day {
         background-color: white;
+        position: relative;
 
         &:hover {
             background-color: #f8f9fa;
@@ -97,6 +117,18 @@
         }
     }
 
+    // Day events container - allow scrolling if many events
+    .fc-daygrid-day-events {
+        min-height: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    // Day frame - make it flexible height
+    .fc-daygrid-day-frame {
+        min-height: 100px;
+        position: relative;
+    }
+
     // Day numbers
     .fc-daygrid-day-number {
         color: #212529;
@@ -106,35 +138,82 @@
 
     // Events
     .fc-event {
-        border: none !important;
-        border-radius: 4px;
-        padding: 2px 4px;
-        font-weight: 500;
+        border: 2px solid rgba(255, 255, 255, 0.9) !important;
+        border-radius: 5px;
+        padding: 3px 6px;
+        font-weight: 600;
         cursor: pointer;
         transition: transform 0.2s, box-shadow 0.2s;
+        color: white !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
         &:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 1) !important;
         }
 
-        // Default event colors (own events)
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-        color: white !important;
+        // Event colors are set via backgroundColor from backend (EventTypeConfig)
+        // No default background color here to allow per-type colors
 
         .fc-event-title {
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .fc-event-time {
             font-weight: 500;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         // Other users' events styling
         &.other-user-event {
-            background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%) !important;
-            opacity: 0.75 !important;
-            border-left: 3px solid #34495e !important;
+            opacity: 0.80 !important;
+            border-left: 4px solid rgba(255, 255, 255, 0.5) !important;
+            border-right: 2px solid rgba(255, 255, 255, 0.9) !important;
+            border-top: 2px solid rgba(255, 255, 255, 0.9) !important;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.9) !important;
 
             &:hover {
-                opacity: 0.9 !important;
+                opacity: 0.95 !important;
             }
+        }
+    }
+
+    // Timed events in day grid (remove dot, make full blocks like all-day events)
+    .fc-daygrid-dot-event {
+        // Make timed events look like all-day events (full colored blocks)
+        .fc-daygrid-event-dot {
+            display: none !important; // Hide the small dot
+        }
+
+        // Make the event span full width with padding
+        padding: 3px 6px !important;
+        margin: 1px 2px !important;
+
+        .fc-event-time {
+            display: inline !important; // Show time
+            margin-right: 4px;
+        }
+
+        .fc-event-title {
+            display: inline !important; // Show title next to time
+        }
+    }
+
+    // Ensure all daygrid events (both all-day and timed) have consistent styling
+    .fc-daygrid-event {
+        border: 2px solid rgba(255, 255, 255, 0.9) !important;
+        border-radius: 5px;
+        padding: 3px 6px;
+        font-weight: 600;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        margin: 1px 2px;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 1) !important;
         }
     }
 

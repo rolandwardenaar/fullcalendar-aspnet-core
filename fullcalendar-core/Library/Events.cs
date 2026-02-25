@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace fullcalendarcore.Library
 {
@@ -15,5 +16,17 @@ namespace fullcalendarcore.Library
         public bool AllDay { get; set; }
         public string UserId { get; set; }
         public string UserName { get; set; }
+
+        [JsonConverter(typeof(JsonNumberEnumConverter<EventType>))]
+        public EventType EventType { get; set; } = EventType.Meeting;
+
+        // Recurrence properties
+        public bool IsRecurring { get; set; }
+
+        [JsonConverter(typeof(JsonNumberEnumConverter<RecurrencePattern>))]
+        public RecurrencePattern RecurrencePattern { get; set; }
+        public int RecurrenceInterval { get; set; } = 1;
+        public string RecurrenceEndDate { get; set; }
+        public int? ParentEventId { get; set; }
     }
 }
