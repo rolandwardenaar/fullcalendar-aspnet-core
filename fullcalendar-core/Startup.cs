@@ -100,7 +100,7 @@ namespace fullcalendarcore
             app.UseCookiePolicy();
 
             app.UseRouting();
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection(); cloudflare zorgt voor https, dus hoeft niet in de app
 
             var corsPolicy = "_myAllowSpecificOrigins";
 
@@ -113,7 +113,7 @@ namespace fullcalendarcore
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+            });            
         }
     }
 }
